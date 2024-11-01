@@ -1,0 +1,13 @@
+Package: MutTranscript
+Type: Package
+Title: Analyzing Mutation Data in VCF or BED Files
+Version: 0.1.0
+Author: Who wrote it
+Maintainer: The package maintainer <yourself@somewhere.net>
+Description: The tool will allow users to analyze mutation data from variant call format (VCF) or browser extensible data (BED) files. While a lot of tools already exist for the analysis of mutation data, functionality is often spread out across multiple packages and ensuring compatibility between different packages, with their different preconditions and postconditions, can often be cumbersome. Therefore, I plan to write this tool to streamline mutation analysis. Specifically, the tool will focus on mutations in exonic regions, and will have functionality such as being able to map the genomic location of the mutation to its location on the coding sequence (CDS) of the transcript with introns removed.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    GenomicFeatures
+RoxygenNote: 7.3.2
