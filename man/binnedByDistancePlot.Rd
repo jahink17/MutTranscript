@@ -2,13 +2,27 @@
 % Please edit documentation in R/binnedByDistancePlot.R
 \name{binnedByDistancePlot}
 \alias{binnedByDistancePlot}
-\title{Title}
+\title{Proportion of Variants of a Specific Type Binned by Distance from 5' End}
 \usage{
-binnedByDistancePlot(codingVcf, nBins = 10)
+binnedByDistancePlot(codingVcf, nBins = 10, type = "CONSEQUENCE")
 }
 \arguments{
-\item{nBins}{}
+\item{codingVcf}{A `VCF` object generated using `annotateVCF()` containing coding variants with metadata, including a `CDSLOC.start` column indicating the position of the mutation in the coding sequence. Must also contain a column for the user=defined variant type.}
+
+\item{nBins}{An integer specifying the number of bins to divide the coding region into. Default is 10.}
+
+\item{type}{A string specifying the property to group the variants by in each stacked barplot.}
+}
+\value{
+A ggplot object displaying the binned distribution of variants by variant type.
 }
 \description{
-Title
+This function creates a stacked bar plot showing the distribution of variant counts across bins
+defined by their distance from the 5' end of the coding sequence. The plot is useful for visualizing
+how variants are distributed across the coding region and grouped by a user-defined type (e.g. synonymous v nonsynonymous).
+}
+\examples{
+\dontrun{
+binnedByDistancePlot(codingVcf, nBins = 10)
+}
 }
