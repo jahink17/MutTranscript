@@ -3,3 +3,7 @@
 export(annotateVcf)
 export(binnedByDistancePlot)
 export(loadVcf)
+import(BiocGenerics)
+import(VariantAnnotation)
+import(dplyr)
+import(ggplot2)

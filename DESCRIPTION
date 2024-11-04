@@ -17,6 +17,7 @@ Description: The tool will allow users to analyze mutation data from
     transcript with introns removed.
 License: MIT + file LICENSE
 Imports: 
+    BiocGenerics,
     BSgenome.Hsapiens.UCSC.hg19,
     dplyr,
     GenomicFeatures,
