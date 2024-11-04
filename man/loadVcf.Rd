@@ -2,13 +2,24 @@
 % Please edit documentation in R/loadVCF.R
 \name{loadVcf}
 \alias{loadVcf}
-\title{Title}
+\title{Load a VCF file into R}
 \usage{
 loadVcf(pathToVcf, genome)
 }
 \arguments{
-\item{genome}{}
+\item{pathToVcf}{A string representing the file path to the VCF file.}
+
+\item{genome}{A string specifying the reference genome version (e.g. "hg19")}
+}
+\value{
+A `VCF` object containing the variants from the VCF file.
 }
 \description{
-Title
+This function loads a VCF (Variant Call Format) file, specified by the file path, into R using the `VariantAnnotation` package.
+It returns a VCF object, which can be further used for variant analysis.
+}
+\examples{
+\dontrun{
+vcfData <- loadVCF("/path/to/file.vcf", "hg19")
+}
 }
