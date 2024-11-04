@@ -1,3 +1,12 @@
+#' Title
+#'
+#' @param codingVcf
+#' @param nBins
+#'
+#' @return
+#' @export
+#'
+#' @examples
 binnedByDistancePlot <- function(codingVcf, nBins = 10) {
   codingVcfDf <- as.data.frame(codingVcf, row.names = seq(1, length(codingVcf)))
   codingVcfDf$bin <- cut(codingVcfDf$CDSLOC.start, breaks = nBins, labels = FALSE)
