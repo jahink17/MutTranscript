@@ -29,3 +29,27 @@ binnedByDistancePlot <- function(codingVcf, nBins = 10, type = "CONSEQUENCE") {
     labs(x = "Bins from 5' End", y = "Variant Count", fill = "Variant Type") +
     theme_minimal()
 }
+
+binnedByDistancePlotV2 <- function(codingVcf, nBins = 10, type = "CONSEQUENCE") {
+
+  codingVcfDf <- as.data.frame(codingVcf, row.names = seq(1, length(codingVcf)))
+
+  codingVcfDf <- calculateNormDistances(codingVcfDf)
+
+  codingVcfDf$bin <- cut(codingVcfDf$normDist, breaks = nBins, labels = FALSE)
+  variant_counts <- codingVcfDf %>%
+    dplyr::group_by(across(all_of(c("bin", type)))) %>%
+    dplyr::summarise(count = n(), .groups = 'drop')
+  ggplot2::ggplot(variant_counts, aes(x = factor(bin), y = count, fill = .data[[type]])) +
+    geom_bar(stat = "identity") +
+    labs(x = "Bins from 5' End", y = "Variant Count", fill = "Variant Type") +
+    theme_minimal()
+}
+
+calculateNormDistances <- function(codingVcfDf) {
+  transcriptLengths <- GenomicFeatures::transcriptLengths(txdb)
+  codingVcfDf$TXIDnum <- as.integer(codingVcfDf$TXID)
+  codingVcfDf <- dplyr::left_join(codingVcfDf, transcriptLengths, by = join_by(TXIDnum == tx_id))
+  codingVcfDf$normDist <- codingVcfDf$CDSLOC.start / codingVcfDf$width.y
+  return(codingVcfDf)
+}
