@@ -15,11 +15,12 @@ loadVcf(pathToVcf, genome)
 A `VCF` object containing the variants from the VCF file.
 }
 \description{
-This function loads a VCF (Variant Call Format) file, specified by the file path, into R using the `VariantAnnotation` package.
+A function that loads a VCF (Variant Call Format) file, specified by the file path, into R.
 It returns a VCF object, which can be further used for variant analysis.
 }
 \examples{
 \dontrun{
 vcfData <- loadVCF("/path/to/file.vcf", "hg19")
 }
+
 }
