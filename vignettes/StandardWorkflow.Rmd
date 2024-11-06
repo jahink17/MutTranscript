@@ -1,0 +1,25 @@
+---
+title: "StandardWorkflow"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{StandardWorkflow}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup}
+library(MutTranscript)
+```
+
+Once mutationsVcf (or your preferred mutation vcf) is loaded, we run annotateCodingVcf() to annotate the file appropriately like the following. 
+
+```{r}
+annotatedVcf <- annotateCodingVcf(mutationsVcf)
+annotatedVcf
+```
+
+```{r}
+binnedByDistancePlot(annotatedVcf)
+```
+
+
