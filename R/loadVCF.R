@@ -6,8 +6,8 @@
 #' A function that loads a VCF (Variant Call Format) file, specified by the file path, into R.
 #' It returns a VCF object, which can be further used for variant analysis.
 #'
-#' @param pathToVcf A string representing the file path to the VCF file.
-#' @param genome A string specifying the reference genome version (e.g. "hg19")
+#' @param pathToVcf A string representing the file path to the VCF file. The VCF file must have mutations aligned using the hg19 reference genome; other genomes are not supported at the moment.
+#' @param genome A string specifying the reference genome version (e.g. "hg19") (Note: right now, this is the only version that is supported. Additional functionality for supporting other genome types will be added in the future.)
 #'
 #' @return A `VCF` object containing the variants from the VCF file.
 #'

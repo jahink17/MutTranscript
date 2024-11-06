@@ -14,19 +14,64 @@ knitr::opts_chunk$set(
 ```
 
 # MutTranscript
+Analyzing Transcript-level Properties of Mutation Data in VCF Files
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of MutTranscript is to ...
+## Description
+
+The tool will allow users to analyze mutation data from
+variant call format (VCF) files. The purpose of this tool is to streamline 
+the analysis of transcription-related effects of mutations, such as analyzing 
+whether the mutations are synonymous or nonsynonymous at the amino acid level, 
+whether they have any deleterious effects and so on. The tool also enables 
+the visualization of mutations in exonic regions, allowing the exploration 
+of how these transcription-related effects vary along the length of a gene. 
+It has the functionality to map the genomic location of mutations to 
+their location on the coding sequence (CDS) of the transcript, with the introns 
+removed.
+
+Although there are already many existing tools to annotate mutation data from
+sequencing, some of which this package relies on, no package exists for the
+specific purpose of visualizing mutation property distribution and how it varies
+with the distance along genes. This information can be relevant for, for example,
+uncovering biological effects such as mutation bias on particular ends of genes or
+technical effects such as bias towards the 3' or 5' ends of genes in particular
+RNA sequencing platforms. Therefore, we hope that this package will enable exploratory
+analysis of such effects and thus guide further downstream analysis of mutation data.
+
+This package was built using R version 4.4.2 on an aarch64-apple-darwin20 platform, 
+running under macOS Ventura 13.2.1.
 
 ## Installation
 
 You can install the development version of MutTranscript like so:
 
 ``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+install.packages("devtools")
+library("devtools")
+devtools::install_github("jahink17/MutTranscript", build_vignettes = TRUE)
+library("MutTranscript")
 ```
+
+## Overview
+
+## Contributions
+
+## References
+
+```r
+ls("package:<PackageName>")
+data(package = "<PackageName>") # optional
+browseVignettes("<PackageName>")
+```
+
+## Acknowledgements
+
+This package was developed as part of an assessment for 2024 BCB410H: Applied Bioinformatics
+course at the University of Toronto, Toronto, CANADA. `MutTranscript` welcomes issues,
+enhancement requests, and other contributions. To submit an issue, use the GitHub issues.
 
 ## Example
 

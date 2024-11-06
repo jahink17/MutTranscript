@@ -18,3 +18,7 @@
 #
 # txdb <- TxDb.Hsapiens.UCSC.hg19.knownGene
 # annotated_variants <- locateVariants(vcf, txdb, CodingVariants())
+#
+# vcf_filename <- system.file("extdata", "chr22.vcf.gz", package="VariantAnnotation")
+# mutationsVcf <- readVcf(vcf_filename, "hg19")
+# usethis::use_data(mutationsVcf)

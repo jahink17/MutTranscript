@@ -1,25 +1,25 @@
 Type: Package
 Package: MutTranscript
-Title: Analyzing Mutation Data in VCF or BED Files
+Title: Analyzing Transcript-level Properties of Mutation Data in VCF Files
 Version: 0.1.0
-Author@R: person("Jahin", "Kabir", "jahin.kabir@mail.utoronto.ca", role = c("aut", "cre"))
+Authors@R: person("Jahin", "Kabir", email = "jahin.kabir@mail.utoronto.ca", role = c("aut", "cre"))
 Maintainer: Jahin Kabir <jahin.kabir@mail.utoronto.ca>
 Description: The tool will allow users to analyze mutation data from
-    variant call format (VCF) or browser extensible data (BED) files.
-    While a lot of tools already exist for the analysis of mutation data,
-    functionality is often spread out across multiple packages and
-    ensuring compatibility between different packages, with their
-    different preconditions and postconditions, can often be cumbersome.
-    Therefore, I plan to write this tool to streamline mutation analysis.
-    Specifically, the tool will focus on mutations in exonic regions, and
-    will have functionality such as being able to map the genomic location
-    of the mutation to its location on the coding sequence (CDS) of the
-    transcript with introns removed.
+    variant call format (VCF) files. The purpose of this tool is to streamline 
+    the analysis of transcription-related effects of mutations, such as analyzing 
+    whether the mutations are synonymous or nonsynonymous at the amino acid level, 
+    whether they have any deleterious effects and so on. The tool also enables 
+    the visualization of mutations in exonic regions, allowing the exploration 
+    of how these transcription-related effects vary along the length of a gene. 
+    It has the functionality to map the genomic location of mutations to 
+    their location on the coding sequence (CDS) of the transcript, with the introns 
+    removed.
 License: MIT + file LICENSE
 Imports: 
     BiocGenerics,
     BSgenome.Hsapiens.UCSC.hg19,
     dplyr,
+    GenomeInfoDb,
     GenomicFeatures,
     ggplot2,
     TxDb.Hsapiens.UCSC.hg19.knownGene,
@@ -27,3 +27,8 @@ Imports:
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.3.2
+Depends: 
+    R (>= 4.4.2)
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3

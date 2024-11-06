@@ -7,9 +7,9 @@
 loadVcf(pathToVcf, genome)
 }
 \arguments{
-\item{pathToVcf}{A string representing the file path to the VCF file.}
+\item{pathToVcf}{A string representing the file path to the VCF file. The VCF file must have mutations aligned using the hg19 reference genome; other genomes are not supported at the moment.}
 
-\item{genome}{A string specifying the reference genome version (e.g. "hg19")}
+\item{genome}{A string specifying the reference genome version (e.g. "hg19") (Note: right now, this is the only version that is supported. Additional functionality for supporting other genome types will be added in the future.)}
 }
 \value{
 A `VCF` object containing the variants from the VCF file.
