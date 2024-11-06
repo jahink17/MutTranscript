@@ -48,15 +48,52 @@ library("MutTranscript")
 
 ## Overview
 
-## Contributions
-
-## References
-
 ``` r
 ls("package:<PackageName>")
 data(package = "<PackageName>") # optional
 browseVignettes("<PackageName>")
 ```
+
+## Contributions
+
+The functions were contributed by Jahin Kabir, with help from the
+packages cited below. Minimal help was used from GenAI, with the
+`binnedByDistancePlot()` function, to get help with binning the
+mutations by distance.
+
+## References
+
+Huber, W., Carey, J. V, Gentleman, R., Anders, S., Carlson, M.,
+Carvalho, S. B, Bravo, C. H, Davis, S., Gatto, L., Girke, T., Gottardo,
+R., Hahne, F., Hansen, D. K, Irizarry, A. R, Lawrence, M., Love, I. M,
+MacDonald, J., Obenchain, V., Ole’s, K. A, Pag’es, H., Reyes, A.,
+Shannon, P., Smyth, K. G, Tenenbaum, D., Waldron, L., Morgan, M. (2015).
+“Orchestrating high-throughput genomic analysis with Bioconductor.”
+Nature Methods, 12(2), 115–121.
+<http://www.nature.com/nmeth/journal/v12/n2/full/nmeth.3252.html>.
+
+Pagès H (2024). BSgenome: Software infrastructure for efficient
+representation of full genomes and their SNPs. R package version 1.74.0,
+<https://bioconductor.org/packages/BSgenome>.
+
+Lawrence M, Huber W, Pagès H, Aboyoun P, Carlson M, Gentleman R, Morgan
+M, Carey V (2013). “Software for Computing and Annotating Genomic
+Ranges.” PLoS Computational Biology, 9.
+<doi:10.1371/journal.pcbi.1003118>,
+<http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1003118>.
+
+Obenchain V, Lawrence M, Carey V, Gogarten S, Shannon P, Morgan M
+(2014). “VariantAnnotation: a Bioconductor package for exploration and
+annotation of genetic variants.” Bioinformatics, 30(14), 2076-2078.
+<doi:10.1093/bioinformatics/btu168>.
+
+Wickham H, François R, Henry L, Müller K, Vaughan D (2023). dplyr: A
+Grammar of Data Manipulation. R package version 1.1.4,
+<https://github.com/tidyverse/dplyr>, <https://dplyr.tidyverse.org>.
+
+Wickham H (2016). ggplot2: Elegant Graphics for Data Analysis.
+Springer-Verlag New York. ISBN 978-3-319-24277-4,
+<https://ggplot2.tidyverse.org>.
 
 ## Acknowledgements
 
@@ -64,48 +101,3 @@ This package was developed as part of an assessment for 2024 BCB410H:
 Applied Bioinformatics course at the University of Toronto, Toronto,
 CANADA. `MutTranscript` welcomes issues, enhancement requests, and other
 contributions. To submit an issue, use the GitHub issues.
-
-## Example
-
-This is a basic example which shows you how to solve a common problem:
-
-``` r
-library(MutTranscript)
-#> Warning: replacing previous import 'VariantAnnotation::select' by
-#> 'dplyr::select' when loading 'MutTranscript'
-#> Warning: replacing previous import 'GenomeInfoDb::intersect' by
-#> 'dplyr::intersect' when loading 'MutTranscript'
-#> Warning: replacing previous import 'BiocGenerics::union' by 'dplyr::union' when
-#> loading 'MutTranscript'
-#> Warning: replacing previous import 'BiocGenerics::combine' by 'dplyr::combine'
-#> when loading 'MutTranscript'
-#> Warning: replacing previous import 'BiocGenerics::setdiff' by 'dplyr::setdiff'
-#> when loading 'MutTranscript'
-#> Warning: replacing previous import 'BiocGenerics::Position' by
-#> 'ggplot2::Position' when loading 'MutTranscript'
-## basic example code
-```
-
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
-
-``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
-```
-
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this.
-
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.

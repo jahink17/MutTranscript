@@ -23,7 +23,6 @@
 #' @import TxDb.Hsapiens.UCSC.hg19.knownGene
 #' @import VariantAnnotation
 #' @import BSgenome.Hsapiens.UCSC.hg19
-#' @import GenomeInfoDb
 #'
 #' @examples
 #' annotatedVcf <- annotateCodingVcf(mutationsVcf)
@@ -31,7 +30,9 @@
 #' @md
 annotateCodingVcf <- function(vcf) {
   txdb <- TxDb.Hsapiens.UCSC.hg19.knownGene::TxDb.Hsapiens.UCSC.hg19.knownGene
-  GenomeInfoDb::seqlevels(vcf) <- paste0("chr", seqlevels(vcf)) # TO-DO: check format first
+  if (all(!grepl("^chr", GenomeInfoDb::seqlevels(vcf)))) {
+    GenomeInfoDb::seqlevels(vcf) <- paste0("chr", GenomeInfoDb::seqlevels(vcf))
+  }
   annotatedVariants <- VariantAnnotation::predictCoding(vcf, txdb, seqSource = Hsapiens)
   return(annotatedVariants)
 }
