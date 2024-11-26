@@ -32,4 +32,7 @@ Suggests:
     knitr,
     rmarkdown,
     testthat (>= 3.0.0)
+<<<<<<< HEAD
 VignetteBuilder: knitr
+=======
+>>>>>>> b8603175d3f48c99b640864697643218f9753087
