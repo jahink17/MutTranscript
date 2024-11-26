@@ -33,7 +33,7 @@ binnedByDistancePlot <- function(codingVcf, nBins = 10, type = "CONSEQUENCE") {
   variant_counts <- codingVcfDf %>%
     dplyr::group_by(across(all_of(c("bin", type)))) %>%
     dplyr::summarise(count = n(), .groups = 'drop')
-  binnnedPlot <- ggplot2::ggplot(variant_counts, aes(x = factor(bin), y = count, fill = .data[[type]])) +
+  binnedPlot <- ggplot2::ggplot(variant_counts, aes(x = factor(bin), y = count, fill = .data[[type]])) +
     geom_bar(stat = "identity") +
     labs(x = "Distance from Transcription Start Site", y = "Variant Count", fill = "Variant Type") +
     theme_minimal()
