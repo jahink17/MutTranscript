@@ -64,13 +64,28 @@ data(package = "<PackageName>") # optional
 browseVignettes("<PackageName>")
 ```
 
+The package contains 5 functions: 1. loadVcf() 2. annotateVcf() 3.
+binnedByDistancePlotV2() 4. binnedByDistancePlotSingleGene() 5.
+runBinnedPlotSingleGene()
+
 ## Contributions
 
 The functions were contributed by Jahin Kabir, with help from the
-packages cited below. Minimal help was used from GenAI, with the
-`binnedByDistancePlot()` function, to get help with binning the
-mutations by distance. AI was also used to assist with building the
-Shiny app, and the code output from GenAI was modified by Jahin Kabir.
+packages cited below. LoadVcf() loads a VCF file from a given file path
+and makes sure the chromosome names are in the appropriate format for
+downstream analysis. annotateVcf() annotates the VCF file to identify
+coding mutations and returns their annotated information, such as amino
+acid change. binnedByDistancePlotV2() plots the distribution of mutation
+types along the normalized length of genes across all genes in the
+genome, and was written by Jahin Kabir with some assistance from GenAI
+for help with ggplot() functions. binnedByDistancePlotSingleGene() does
+the same thing for a single gene, and was modified from
+binnedByDistancePlotV2() by Jahin.
+
+Minimal help was used from GenAI, with the `binnedByDistancePlot()`
+function, to get help with binning the mutations by distance. AI was
+also used to assist with building the Shiny app, and the code output
+from GenAI was modified by Jahin Kabir.
 
 ## References
 
