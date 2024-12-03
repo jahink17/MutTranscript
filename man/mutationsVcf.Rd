@@ -3,28 +3,23 @@
 \docType{data}
 \name{mutationsVcf}
 \alias{mutationsVcf}
-\title{Mutations detected by sequencing}
+\title{Mutations detected by sequencing a human genome}
 \format{
-A matrix with columns:
-\describe{
- \item{Condition.1}{First condition, under which least light was provided
-   to plants.}
- \item{Condition.2}{Second condition, under which most light was provided to plants.}
- \item{Condition.3}{Third condition, the control.}
-}
+An object of class \code{CollapsedVCF} with 10376 rows and 5 columns.
 }
 \source{
-University of Guelph, Canada.
+
 }
 \usage{
 mutationsVcf
 }
 \description{
-An RNAseq experiment conductd using bean plants from 2016 in Canada.
+A VCF object found in the VariantAnnotation package, obtained by using the `vcf_filename <- system.file("extdata", "chr22.vcf.gz", package="VariantAnnotation")` command followed by the `readVcf(vcf_filename)` command. It contains mutations from the genome sequence of chr22 of an individual.
 }
 \examples{
 \dontrun{
  mutationsVcf
 }
+
 }
 \keyword{datasets}

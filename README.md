@@ -21,16 +21,20 @@ along the length of a gene. It has the functionality to map the genomic
 location of mutations to their location on the coding sequence (CDS) of
 the transcript, with the introns removed.
 
-Although there are already many existing tools to annotate mutation data
-from sequencing, some of which this package relies on, no package exists
-for the specific purpose of visualizing mutation property distribution
-and how it varies with the distance along genes. This information can be
-relevant for, for example, uncovering biological effects such as
-mutation bias on particular ends of genes or technical effects such as
-bias towards the 3’ or 5’ ends of genes in particular RNA sequencing
-platforms. Therefore, we hope that this package will enable exploratory
-analysis of such effects and thus guide further downstream analysis of
-mutation data.
+This R package extends existing functionality for the analysis of
+mutations stored in VCF files. Although many tools exist for the
+analysis of mutations, there are none to the best of my knowledge that
+provides a streamlined workflow for the visual exploration of coding
+sequence mutations and their effects on the protein product. This tool
+aims to fill that gap in existing software, as well as also provide
+functionality to map these mutation properties along the length of a
+gene to see where specific kinds of mutations localize on the gene. This
+information can be relevant for, for example, uncovering biological
+effects such as mutation bias on particular ends of genes or technical
+effects such as bias towards the 3’ or 5’ ends of genes in particular
+RNA sequencing platforms. Therefore, we hope that this package will
+enable exploratory analysis of such effects and thus guide further
+downstream analysis of mutation data.
 
 This package was built using R version 4.4.2 on an
 aarch64-apple-darwin20 platform, running under macOS Ventura 13.2.1.
@@ -46,6 +50,12 @@ devtools::install_github("jahink17/MutTranscript", build_vignettes = TRUE)
 library("MutTranscript")
 ```
 
+To run the Shiny app:
+
+``` r
+runBinnedPlotSingleGene()
+```
+
 ## Overview
 
 ``` r
@@ -59,9 +69,14 @@ browseVignettes("<PackageName>")
 The functions were contributed by Jahin Kabir, with help from the
 packages cited below. Minimal help was used from GenAI, with the
 `binnedByDistancePlot()` function, to get help with binning the
-mutations by distance.
+mutations by distance. AI was also used to assist with building the
+Shiny app, and the code output from GenAI was modified by Jahin Kabir.
 
 ## References
+
+R Core Team (2021). R: A language and environment for statistical
+computing. R Foundation for Statistical Computing, Vienna, Austria. URL
+<https://www.R-project.org/>.
 
 Huber, W., Carey, J. V, Gentleman, R., Anders, S., Carlson, M.,
 Carvalho, S. B, Bravo, C. H, Davis, S., Gatto, L., Girke, T., Gottardo,

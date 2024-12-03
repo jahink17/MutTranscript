@@ -22,7 +22,8 @@ Imports:
     GenomicFeatures,
     ggplot2,
     TxDb.Hsapiens.UCSC.hg19.knownGene,
-    VariantAnnotation
+    VariantAnnotation,
+    shiny
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.3.2
@@ -32,7 +33,5 @@ Suggests:
     knitr,
     rmarkdown,
     testthat (>= 3.0.0)
-<<<<<<< HEAD
 VignetteBuilder: knitr
-=======
->>>>>>> b8603175d3f48c99b640864697643218f9753087
+

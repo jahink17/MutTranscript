@@ -11,15 +11,29 @@ vignette: >
 library(MutTranscript)
 ```
 
-Once mutationsVcf (or your preferred mutation vcf) is loaded, we run annotateCodingVcf() to annotate the file appropriately like the following. 
+## Annotating VCF
+
+Once mutationsVcf (or your preferred mutation vcf) is loaded, we run `annotateCodingVcf()` to annotate the file appropriately like the following. 
+
+Note: A warning message is generated. You can ignore this. 
 
 ```{r}
 annotatedVcf <- annotateCodingVcf(mutationsVcf)
 annotatedVcf
 ```
 
-```{r}
-binnedByDistancePlot(annotatedVcf)
-```
+## Generating a Genome-wide Feature Plot
 
+To generate a genome-wide (i.e. analyze across all coding regions) feature-vs-distance plot, we can use the `binnedByDistancePlot()` function. 
+
+```{r}
+binnedByDistancePlotV2(annotatedVcf, nBins = 20)
+```
+## Analyzing Mutations in a Single Gene
+
+Instead of doing a genome-wide analysis, we can focus on a specific gene and plot features against distance for that gene. 
+
+```{r}
+binnedByDistancePlotSingleGene(annotatedVcf, 7273, nBins = 50)
+```
 

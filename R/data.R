@@ -1,21 +1,15 @@
-#' Mutations detected by sequencing
+#' Mutations detected by sequencing a human genome
 #'
-#' An RNAseq experiment conductd using bean plants from 2016 in Canada.
+#' A VCF object found in the VariantAnnotation package, obtained by using the `vcf_filename <- system.file("extdata", "chr22.vcf.gz", package="VariantAnnotation")` command followed by the `readVcf(vcf_filename)` command. It contains mutations from the genome sequence of chr22 of an individual.
 #'
-#' @source University of Guelph, Canada.
+#' @source VariantAnnotation
 #'
-#' @format A matrix with columns:
-#' \describe{
-#'  \item{Condition.1}{First condition, under which least light was provided
-#'    to plants.}
-#'  \item{Condition.2}{Second condition, under which most light was provided to plants.}
-#'  \item{Condition.3}{Third condition, the control.}
-#' }
 #' @examples
 #' \dontrun{
 #'  mutationsVcf
 #' }
+#'
 "mutationsVcf"
-# [END] written by Jahin Kabir
+# [END]
 
 
